@@ -1,4 +1,4 @@
-#.vscode/*
-#tests/local_vars.yml
+.vscode/*
+tests/local_vars.yml
 # Reminder: git rm --cached .vscode/tasks.json; git rm --cached tests/local_vars.yml
 
