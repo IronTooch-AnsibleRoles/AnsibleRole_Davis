@@ -1,0 +1,26 @@
+galaxy_info:
+  role_name: my_role
+  namespace: irontooch
+  author: IronTooch
+  description: App_Description
+  license: GPL-3.0-only
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+
+  galaxy_tags: []
+
+dependencies: []  # Remove [] if roles are included, below
+#   - role: 'my_namespace.my_role'
+#     vars:
+#       my_var: "my_value"
+#   - role: irontooch.postgresql
+#     vars:
+#       postgres_app_name: "{{ my_app_name }}"
+#   - role: 'irontooch.maria_db'
+#     vars:
+#       mariadb_app_name: "{{ my_app_name }}"
+#       mariadb_dbuser_password: "{{ lookup('password', '/dev/null chars=ascii_letters,digits length=20') }}"

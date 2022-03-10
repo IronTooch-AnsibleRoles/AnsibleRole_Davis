@@ -1,0 +1,53 @@
+---
+# Items for Default Installation
+my_app_name: "my_app"
+my_app_version: "1.2.3"
+my_app_url: ""
+my_app_osver: "focal"
+my_app_ppa_repo: "ppa:{{ my_app_name }}/{{ my_app_version }}"
+my_app_deb_repo: "deb {{my_app_url}}{{ cal_node_ver }} {{ my_app_osver }} main"
+my_app_repo: "my_app_owner/my_app_repo"
+my_app_gpg_key: "http://path_to_key"
+my_app_keyring_root: "/usr/share/keyrings"
+my_app_gpg_keyring: "{{ my_app_name }}_keyring"
+my_app_sources_listname: "{{ my_app_name }}.list"
+my_app_sources_file: "/etc/apt/sources.list.d/{{ my_app_sources_listname }}"
+my_app_temp_dir: ""
+my_app_temp_archive: "{{ my_app_temp_dir }}/my_app.tar.gz"
+
+# Items for running the application
+my_app_service_user: "{{ my_app_name }}_user"
+my_app_dir: "/opt/{{ my_app_name }}"
+
+# Variables for configurating the application
+my_app_install_program: "./install.sh"
+my_app_refresh_command: "{{ my_app_dir }}/refresh.sh"
+my_app_install_command: "./{{ my_app_install_program }} my_option"
+my_app_install_artifact: "my_post_install_artifact"
+my_app_installed_config_file: "my_app_config_file"
+my_app_deployed_config_file: "my_app_config_file"
+my_app_post_config_command: "./rebuild.sh"
+
+# Items for deploying the service for the role
+my_app_start_command: "{{ my_app_dir }}/my_app.sh start"
+my_app_stop_command: "{{ my_app_dir }}/my_app.sh start"
+
+# Items for managing a Self-Hosted Certificate
+smallstep_certificate_name: "my_app.example.com"
+smallstep_postrenewal_cert_path: /etc/my_app/certificate.crt"
+smallstep_postrenewal_cert_owner: "{{ my_app_service_user }}"
+smallstep_postrenewal_key_path: "/etc/my_app/certificate.key"
+smallstep_postrenewal_key_owner: "{{ my_app_service_user }}"
+# smallstep_services_to_restart:
+#   - docker
+
+
+# Other App Settings
+# my_app_list_data:
+#   - 11.22.33.44
+#   - 55.66.77.88
+
+# Other Defaults
+php_home: "/var/run/php/"
+nginx_default_config_path: "/etc/nginx/sites-enabled/default"
+nginx_user: "www-data"
